@@ -6,11 +6,19 @@ class Ship(models.Model):
     """Ship for alien invasion"""
     ship_id = models.AutoField(primary_key=True,auto_created=True,unique=True)
     ship_name = models.CharField(max_length=200,null=False,unique=True)
+    ship_colors = models.CharField(max_length=100,null=False)
     ship_description = models.TextField(max_length=500,null=False)
 
     def __str__(self):
         """String representation of the ship model"""
-        return f"ID: {self.ship_id} Name: {self.ship_name} Desc: {self.ship_description[:75]}..."
+        
+        if len(self.ship_description) > 50:
+            desc_str = f"{self.ship_description[:50]}..."
+        else:
+            desc_str = self.ship_description
+
+        return  f"ID: {self.ship_id}, Name: {self.ship_name}, Colors: {self.ship_colors}, Desc: " + desc_str
+  
 
 # ToDO: duplicate the ship model to make the other models alien ship or aliens, bullets, and backgrounds.
 

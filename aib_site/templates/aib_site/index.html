@@ -5,21 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Build Alien Invasion</title>
+    {% extends "aib_site/base.html"%}
+    {% block styling_links %}{% endblock styling_links %}
 </head>
 
-<body>
-    <h1>Build Alien Invasion Home Page</h1>
-    
-    {% extends "aib_site/base.html"%}
+
     {% block content %}
+    <body class="container">
+    <h1 class="text-primary">Build Alien Invasion Home Page</h1>
+
+
     <p>This app will provide a form and instructions to guide a user through the process of creating a customized
         version of the game alien invasion using the pygame module.
 
         users will be able to use OOP to customize their own verision of Alien Invasion, and at the same time be able to
         see exactly how their choices affect the code that is being written
     </p>
-    
-       <h2>need multiple .png options for:</h2> 
+
+    <h2>need multiple .png options for:</h2>
     <ul>
         <li>ships</li>
         <li>aliens or alien ships</li>
@@ -28,11 +31,13 @@
         <li>sounds for hits, firing of bullets, crashes (optional)</li>
     </ul>
 
-    
+
     <h1>
         TODO: The next html task will be to design a choose your ship form
     </h1>
-    {% endblock content%}
-</body>
+    </body>
+
+    {% endblock content %}
+
 
 </html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose A Ship</title>
+    {% extends 'aib_site/base.html' %}
+    {% block styling_links %}{% endblock styling_links%}
+</head>
+{% block content%}
+
+<body class="container">
+
+    <form class="" method="POST" action="" >
+        <div class="form-group">
+            <label>
+                <select>
+                    {% for ship in ships%}
+                    <option>{ship.name}</option>
+                    {% endfor %}
+                </select>
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                <button class="btn btn-primary mb-2">Sumbit Choice</button>
+            </label>
+        </div>
+    </form>
+
+</body>
+{% endblock content%}
+
+</html>

@@ -8,17 +8,16 @@
     {% extends 'aib_site/base.html' %}
     {% block styling_links %}
     <script src="../../static/aib_site/js/ship_form.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../static/aib_site/css/ship_form.css">
     {% endblock styling_links%}
 </head>
 {% block content%}
 
 <body class="container">
-    <div class=" text-center">
-
-    </div>
     
+   
     {% for ship in ships %}
-    <div class="infoDivs text-center" id="div-{{ship.ship_id}}" class="text-center" style="visibility: hidden;">
+    <div class="infoDivs border border-dark p-2" id="div-{{ship.ship_id}}"  >
         <div id="imgDiv">
             <img src="../../static/aib_site/py_code/alien_invasion/assets/images/ships/{{ship.ship_name}}.png">
         </div>
@@ -35,7 +34,7 @@
     {% endfor %}
 
 
-    <div class="text-center">
+    <div class="">
         <form class="" method="POST" action="">
             <div class="form-group">
                 <label > Ship Name:

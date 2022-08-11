@@ -6,28 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choose A Ship</title>
     {% extends 'aib_site/base.html' %}
-    {% block styling_links %}{% endblock styling_links%}
+    {% block styling_links %}
+    <script src="../../static/aib_site/js/ship_form.js"></script>
+    {% endblock styling_links%}
 </head>
 {% block content%}
 
 <body class="container">
+    <div class=" text-center">
 
-    <form class="" method="POST" action="" >
-        <div class="form-group">
-            <label>
-                <select id="ship_selector">
-                    {% for ship in ships%}
-                    <option>{ship.name}</option>
-                    {% endfor %}
-                </select>
-            </label>
+    </div>
+    
+    {% for ship in ships %}
+    <div class="infoDivs text-center" id="div-{{ship.ship_id}}" class="text-center" style="visibility: hidden;">
+        <div id="imgDiv">
+            <img src="../../static/aib_site/py_code/alien_invasion/assets/images/ships/{{ship.ship_name}}.png">
         </div>
-        <div class="form-group">
-            <label>
-                <button class="btn btn-primary mb-2">Sumbit Choice</button>
-            </label>
+        <div>
+            <p class="">Ship Name: <span id="shipName">{{ship.ship_name}}</span></p>
         </div>
-    </form>
+        <div>
+            <p class="">Colors: <span id="shipColors">{{ship.ship_colors}}</span></p>
+        </div>
+        <div>
+            <p class="">Description: <span id="shipDesc">{{ship.ship_description}}</span></p>
+        </div>
+    </div>
+    {% endfor %}
+
+
+    <div class="text-center">
+        <form class="" method="POST" action="">
+            <div class="form-group">
+                <label > Ship Name:
+                    <select id="ship_selector" name="shipName">
+                        {% for ship in ships %}
+                        <option value="{{ship.ship_id}}" >{{ship.ship_name}}</option>
+                        {% endfor %}
+                    </select>
+                </label>
+            </div>
+            <div class="form-group">
+                <label>
+                    <button id="lbl" class="btn btn-primary mb-2">Sumbit Choice</button>
+                </label>
+            </div>
+        </form>
+    </div>
+
+    </div>
 
 </body>
 {% endblock content%}

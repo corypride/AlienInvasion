@@ -12,9 +12,30 @@
 </head>
 {% block content %}
 <body class="container">
-   ,<marquee>
+  
+   <marquee>
        <h1 class="text-primary">Take your time to look at all the ship options</h1>
     </marquee> 
+    <table class="table text-center table-striped"> 
+        <thead class="thead-dark">
+            <th>Ship Id</th>
+            <th>Ship Name</th>
+            <th>Ship Colors</th>
+            <th>Ship Description</th>
+            <th>Ship Image</th>
+        </thead>
+        {% for ship in ships %}
+        <tr>
+            <td>{{ship.ship_id}}</td>
+            <td>{{ship.ship_name}}</td>
+            <td>{{ship.ship_colors}}</td>
+            <td>{{ship.ship_description}}</td>
+            <td>
+                <img src="../../static/aib_site/py_code/alien_invasion/assets/images/ships/{{ship.ship_name}}.png">
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 {% endblock content %}
 </html>

@@ -35,10 +35,11 @@
 
 
     <div class="">
-        <form class="" method="POST" action="">
+        <form class="" method="POST" action="{% url 'aib_site:ship_form'%}">
+            {% csrf_token %}
             <div class="form-group">
                 <label > Ship Name:
-                    <select id="ship_selector" name="shipName">
+                    <select id="ship_selector" name="shipId">
                         {% for ship in ships %}
                         <option value="{{ship.ship_id}}" >{{ship.ship_name}}</option>
                         {% endfor %}

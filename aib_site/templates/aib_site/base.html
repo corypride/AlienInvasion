@@ -5,7 +5,11 @@
 <link type="text/css" rel="stylesheet" href="../../static/aib_site/bootstrap-4.3.1/dist/css/bootstrap.min.css">
 <!-- end of Bootstrap links -->
 {% block styling_links %}{% endblock styling_links %}
-
+<div class="navbar navbar-dark bg-dark ">
+    <a href="{% url 'aib_site:all_ships'%}">All Ships</a>
+    <a href="{% url 'aib_site:ship_form'%}">Ship Form</a>
+    
+</div>
 
 
     <marquee style="font-size: xx-large;">Welcome to the 'Build your Alien Invasion' site!</marquee>

@@ -5,7 +5,14 @@
 <link type="text/css" rel="stylesheet" href="../../static/aib_site/bootstrap-4.3.1/dist/css/bootstrap.min.css">
 <!-- end of Bootstrap links -->
 {% block styling_links %}{% endblock styling_links %}
-<div class="navbar navbar-dark bg-dark ">
+<div class="navbar navbar-dark bg-dark text-primary">
+    {% if user.is_authenticated %}
+        Hello, {{user.username}}
+        <a href="{% url 'users:logout' %}">Log Out</a>      
+    {% else %}
+        <a href="{% url 'users:register' %}">Register</a>
+        <a href="{% url 'users:login' %}">Log In</a>
+    {% endif %}
     <a href="{% url 'aib_site:all_ships'%}">All Ships</a>
     <a href="{% url 'aib_site:ship_form'%}">Ship Form</a>
     

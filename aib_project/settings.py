@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # my apps
     'aib_site', 
+    'users',
 
     # Default django apps
     'django.contrib.admin',

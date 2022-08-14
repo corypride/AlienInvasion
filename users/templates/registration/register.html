@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% extends "aib_site/base.html" %}
+    {% block styling_links %}{% endblock styling_links %}
+</head>
+{% block content %}
+
+<body class="container">
+
+   <form  class="m-5" method="POST" action="{% url 'users:register' %}">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button name='submit'>Log in</button>
+        <input type ="hidden" name="next" 
+            value="{% url 'aib_site:index' %}"/>
+   </form>
+
+</body>
+{% endblock content %}
+
+</html>

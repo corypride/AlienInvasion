@@ -14,36 +14,39 @@
 {% block content%}
 
 <body class="container">
-    
-   
-    {% for ship in ships %}
-    <div class="infoDivs border border-dark p-2" id="div-{{ship.ship_id}}"  >
-        <div id="imgDiv">
-            <img src="../../static/aib_site/py_code/alien_invasion/assets/images/ships/{{ship.ship_name}}.png">
-        </div>
-        <div>
-            <p class="">Ship Name: <span id="shipName">{{ship.ship_name}}</span></p>
-        </div>
-        <div>
-            <p class="">Colors: <span id="shipColors">{{ship.ship_colors}}</span></p>
-        </div>
-        <div>
-            <p class="">Description: <span id="shipDesc">{{ship.ship_description}}</span></p>
-        </div>
-    </div>
-    {% endfor %}
 
-
-    <div class="">
-        <form class="" method="POST" action="{% url 'aib_site:ship_form'%}">
+    <section class="page-section bg-light" id="portfolio">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Ship Portfolio</h2>
+                <h3 class="section-subheading text-muted">Choose Your Ship for Battle.</h3>
+            </div>
+            <div class="row">
+                {% for ship in ships %}
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <!-- Portfolio item {{ship.ship_id}}-->
+                    <div class="portfolio-item text-center">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#ship_form">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="../../static/aib_site/py_code/alien_invasion/assets/images/ships/{{ship.ship_name}}.png" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">{{ship.ship_name.capitalize}}</div>
+                            <div class="portfolio-caption-subheading text-muted">{{ship_colors}}</div>
+                            <div>{{ship.ship_description}}</div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+        </div>
+        <form id="ship_form" method="POST" action="{% url 'aib_site:ship_form'%}">
             {% csrf_token %}
+
             <div class="form-group">
                 <label > Ship Name:
-                    <select id="ship_selector" name="shipId">
-                        {% for ship in ships %}
-                        <option value="{{ship.ship_id}}" >{{ship.ship_name}}</option>
-                        {% endfor %}
-                    </select>
+                    <input type="text" name="shipId">
                 </label>
             </div>
             <div class="form-group">
@@ -52,9 +55,11 @@
                 </label>
             </div>
         </form>
-    </div>
 
-    </div>
+    </section>
+
+
+
 
 </body>
 {% endblock content%}

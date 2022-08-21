@@ -2,16 +2,20 @@
 let prevValue = 0;
 
 window.onload = function () {
-    // write the code that changes a picture frame to match any choice in the ship_selector option
+    // todo: write the code that sets the form value to that of the ship picture that was selected, and then submit the form thru  the DOM then make the form invisible
 
-    let shipSelector = document.getElementById("ship_selector");
 
-    //this function is passed the id value of the ship that the user selects in order to make visible the ship image and its related items
-    showShipInfo(shipSelector.value);
 
-    shipSelector.addEventListener("change", function () {
-        showShipInfo(shipSelector.value);
-    });
+//     // write the code that changes a picture frame to match any choice in the ship_selector option
+
+//     let shipSelector = document.getElementById("ship_selector");
+
+//     //this function is passed the id value of the ship that the user selects in order to make visible the ship image and its related items
+//     showShipInfo(shipSelector.value);
+
+//     shipSelector.addEventListener("change", function () {
+//         showShipInfo(shipSelector.value);
+//     });
 
 
 }

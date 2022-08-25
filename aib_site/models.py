@@ -6,6 +6,7 @@ class Ship(models.Model):
     """Ship for alien invasion"""
     ship_id = models.AutoField(primary_key=True,auto_created=True,unique=True)
     ship_name = models.CharField(max_length=200,null=False,unique=True)
+    ship_displayName = models.CharField(max_length=200,null=False)
     ship_colors = models.CharField(max_length=100,null=False)
     ship_description = models.TextField(max_length=500,null=False)
 

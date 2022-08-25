@@ -27,11 +27,15 @@
         {% for ship in ships %}
         <tr>
             <td>{{ship.ship_id}}</td>
-            <td>{{ship.ship_name}}</td>
+            <td>{{ship.ship_displayName}}</td>
             <td>{{ship.ship_colors}}</td>
             <td>{{ship.ship_description}}</td>
             <td>
-                <img src="../../static/aib_site/py_code/alien_invasion/assets/images/ships/{{ship.ship_name}}.png">
+                {%if "airplane" in ship.ship_name %}
+                <img class="img-fluid" src="../../static/aib_site/py_code/alien_invasion/assets/images/ships/{{ship.ship_name}}.png" alt="..." />
+            {% else %}
+                <img class="img-fluid" src="../../static/aib_site/py_code/alien_invasion/assets/images/ships/{{ship.ship_name}}.bmp" alt="..." />
+            {% endif %}
             </td>
         </tr>
         {% endfor %}

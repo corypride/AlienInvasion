@@ -1,38 +1,8 @@
-// prevValue is a variable that will be used to keep track of the id number of the div of the ship that was previously made visible
-let prevValue = 0;
-
-window.onload = function () {
-    // todo: write the code that sets the form value to that of the ship picture that was selected, and then submit the form thru  the DOM then make the form invisible
-
-
-
-//     // write the code that changes a picture frame to match any choice in the ship_selector option
-
-//     let shipSelector = document.getElementById("ship_selector");
-
-//     //this function is passed the id value of the ship that the user selects in order to make visible the ship image and its related items
-//     showShipInfo(shipSelector.value);
-
-//     shipSelector.addEventListener("change", function () {
-//         showShipInfo(shipSelector.value);
-//     });
-
-
-}
-
-
-function showShipInfo(divIdNum) {
+/** This function takes the id and the ship's name from the item you selected and sets its value to a form that is attached to a modal. Your choice will be saved if you so choose or cancled otherwise.*/
+function populateForm(shipId,shipName){
+   
+    let capitalShipName = shipName[0].toUpperCase() + shipName.substring(1,shipName.length);
+    document.getElementById("formInput").value = shipId;
+    document.getElementById("formText").innerText = `Your choice of ${capitalShipName} will be submitted now.`;
     
-
-    if (prevValue > 0) {
-        document.getElementById("div-" + prevValue).style.visibility = "hidden";
-    }
-    
-    prevValue = divIdNum;
-    let theDivIdstr = "div-" + divIdNum;
-    let theDiv = document.getElementById(theDivIdstr);
-    console.log(theDiv)
-    theDiv.style.visibility = "visible";
-
-
 }

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose A Ship</title>
+    {% extends 'aib_site/base.html' %}
+    {% block styling_links %}
+    <link  type="text/css" rel="stylesheet" href="../../static/aib_site/css/ship_form.css">
+    <script src="../../static/aib_site/js/ship_form.js"></script>
+    {% endblock styling_links%}
+</head>
+{% block content%}
+
+<body class="container">
+
+    <section class="page-section bg-light" id="portfolio">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Ship Portfolio</h2>
+                <h3 class="section-subheading text-muted">Choose Your Ship for Battle.</h3>
+            </div>
+            <div class="row">
+                {% for ship in ships %}
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <!-- Portfolio item {{ship.ship_id}}-->
+                    <div class="portfolio-item text-center">
+                        <a class="portfolio-link" data-toggle="modal" onclick="populateForm('{{ship.ship_id}}','{{ship.ship_name}}')" data-target="#formModal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            {%if "airplane" in ship.ship_name %}
+                                <img class="img-fluid" src="../../static/aib_site/py_code/alien_invasion/assets/images/ships/{{ship.ship_name}}.png" alt="..." />
+                            {% else %}
+                                <img class="img-fluid" src="../../static/aib_site/py_code/alien_invasion/assets/images/ships/{{ship.ship_name}}.bmp" alt="..." />
+                            {% endif %}
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">{{ship.ship_name.capitalize}}</div>
+                            <div class="portfolio-caption-subheading text-muted">{{ship_colors}}</div>
+                            <div>{{ship.ship_description}}</div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+        </div>
+        
+    </section>
+ 
+    <!-- Modal -->
+<div class="modal" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="formModalLabel">Your Ship Choice</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="formText"></p>
+        </div>
+        <form  method="POST" action="{% url 'aib_site:ship_form' %}" id="testForm">
+            {% csrf_token %}
+            <input style="visibility: hidden;" type="text" name="shipId" id="formInput">
+           
+            <button type="button" class="btn btn-secondary mb-2" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary mb-2">Submit choice</button>
+    
+        </form>
+    
+      </div>
+    </div>
+  </div>
+   
+
+
+</body>
+{% endblock content%}
+
+</html>

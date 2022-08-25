@@ -33,4 +33,5 @@ def ship_form(request):
     # No data submitted; display the Choose form
     ships = Ship.objects.all()
     context = {"ships":ships}
-    return render(request,'aib_site/ship_form.html',context)
+    return render(request,'aib_site/pick_ship.html',context)
+

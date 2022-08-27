@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+   
     {% extends "aib_site/base.html" %}
-    {% block styling_links %}{% endblock styling_links %}
+    {% block styling_links %}  {% endblock styling_links %}
 </head>
 {% block content %}
 
-<body class="container">
+<body class="container-fluid">
 
-   <form  class="m-5" method="POST" action="{% url 'users:login' %}">
+   <form  id="test" class="m-5" method="POST" action="{% url 'users:login' %}">
         {% csrf_token %}
         {{form.as_p}}
         <button name='submit'>Log in</button>

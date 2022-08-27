@@ -3,22 +3,31 @@
 <script src="../../static/aib_site/bootstrap-4.3.1/popper.min.js"></script>
 <script src="../../static/aib_site/bootstrap-4.3.1/dist/js/bootstrap.min.js"></script>
 <link type="text/css" rel="stylesheet" href="../../static/aib_site/bootstrap-4.3.1/dist/css/bootstrap.min.css">
+
 <!-- end of Bootstrap links -->
 {% block styling_links %}{% endblock styling_links %}
-<div class="navbar navbar-dark bg-dark text-primary">
-    {% if user.is_authenticated %}
-        Hello, {{user.username}}
-        <a href="{% url 'users:logout' %}">Log Out</a>      
-    {% else %}
-        <a href="{% url 'users:register' %}">Register</a>
-        <a href="{% url 'users:login' %}">Log In</a>
-    {% endif %}
-    <a href="{% url 'aib_site:all_ships'%}">All Ships</a> 
-    <a href="{% url 'aib_site:ship_form'%}">Choose your Ship</a> 
-    
-</div>
-
-
-    <marquee style="font-size: xx-large;">Welcome to the 'Build your Alien Invasion' site!</marquee>
-
+<nav class="navbar navbar-expand-lg navbar-light">
+    <button class="navbar-toggler navbar-toggler-right bg-dark" type="button" data-toggle="collapse"
+        data-target="#navbarTogglerMain" aria-controls="navbarTogglerMain" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <span class="navbar-brand text-light">Nav Bar</span>
+    <div class="collapse navbar-collapse font-weight-bolder mr-auto mt-2 mt-md-0" id="navbarTogglerMain">
+       {% if user.is_authenticated %}
+            Hello, {{user.username}}
+        
+            <a class="nav-link m-auto" href="{% url 'users:logout' %}">Log Out</a> 
+            <a class="nav-link m-auto" href="{% url 'aib_site:ship_form'%}">Choose your Ship</a>      
+        {% else %}
+            <a class="nav-link m-auto" href="{% url 'users:register' %}">Register</a>
+            <a class="nav-link m-auto" href="{% url 'users:login' %}">Log In</a>
+        {% endif %}
+        <a class="nav-link m-auto" href="{% url 'aib_site:all_ships'%}">All Ships</a> 
+        <a class="nav-link m-auto" href="{% url 'aib_site:index'%}">Home</a> 
+    </div>
+</nav>
+<diV>
+    <marquee style="font-size: xx-large;">Welcome to the 👽 Alien Invasion 👽 Builder website!</marquee>
+</diV>
 {% block content %}{% endblock content %}

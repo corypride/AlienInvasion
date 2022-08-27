@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choose A Ship</title>
+    <title>Pick A Ship</title>
     {% extends 'aib_site/base.html' %}
     {% block styling_links %}
     <link  type="text/css" rel="stylesheet" href="../../static/aib_site/css/ship_form.css">
@@ -28,7 +28,7 @@
                     <div class="portfolio-item text-center">
                         <a class="portfolio-link" data-toggle="modal" onclick="populateForm('{{ship.ship_id}}','{{ship.ship_displayName}}')" data-target="#formModal">
                             <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i>👽</div>
                             </div>
                             {%if "airplane" in ship.ship_name %}
                                 <img class="img-fluid" src="../../static/aib_site/py_code/alien_invasion/assets/images/ships/{{ship.ship_name}}.png" alt="..." />

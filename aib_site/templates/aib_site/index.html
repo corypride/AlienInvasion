@@ -4,27 +4,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Build Alien Invasion</title>
-    {% extends "aib_site/base.html"%}
+    <title>Alien Invasion Builder</title>
+    {%extends "aib_site/base.html"%}
     {% block styling_links %}{% endblock styling_links %}
 </head>
-
-
     {% block content %} 
-    <body class="container">
-    <h1 class="text-primary">Build Alien Invasion Home Page</h1>
+    <body class="container-fluid text-light" style="background-image: url('../../static/aib_site/images/alienInvasionHome.jpg');background-repeat: no-repeat;background-size: cover;">
+        
+<!--     
+    <div class="row">
+        <div class="col-sm-12 col-lg-6"> 
+            <img  class="img-thumbnail" src="../../static/aib_site/images/alienInvasion1.png">
+        </div>
+        <div  class="col-sm-12 col-lg-6">
+            <img class="img-thumbnail" src="../../static/aib_site/images/alienInvasion2.png">
+        </div>
+
+    </div>
+    <div class="row">
+        <p>This app will provide a form and instructions to guide a user through the process of creating a customized
+            version of the game alien invasion using python's Pygame module.
+    
+            Users will be able to use OOP to customize their own verision of Alien Invasion, and at the same time be have and option to
+            see exactly how their choices affect the code that is being written ...
+        </p>
+
+        <p>
+            The Alien Invasion game is a 2D game developed using the Pygame module. The aim of the game is to shoot down a fleet of alien ships as they drop down the screen in levels that increase in speed and difficulty.
+        </p>
+
+        <p>
+            While this concept may sound straigt forward, there are many intricate steps to go through to get the game to that point.
+        </p>
+        <p>
+            These steps include: 
+            <ul>
+                <li>Creating the Alien Invasion Class
+                    <ul>
+                        <li>creating the Pygame Window</li>
+                        <li>adding the ability to respond to user input (keypress events)</li>
+                    </ul>
+                </li>
+                <li>Creating a Settings Class</li>
+                <li>Creating the Ship Class</li>
+                <li>Creating the Alien Ship Class</li>
+                <li>Creating the Scoreboard Class</li>
+                <li>Creating the Game Stats Class</li>
+
+            </ul>
+        </p>
+    </div>
 
 
-    <p>This app will provide a form and instructions to guide a user through the process of creating a customized
-        version of the game alien invasion using the pygame module.
-
-        users will be able to use OOP to customize their own verision of Alien Invasion, and at the same time be able to
-        see exactly how their choices affect the code that is being written
-    </p>
+    
 
     <h2>need multiple .png options for:</h2>
     <ul>
-        <li>ships</li>
         <li>aliens or alien ships</li>
         <li>bullets</li>
         <li>backgrounds</li>
@@ -33,8 +68,14 @@
 
 
     <h1>
-        TODO: The next html task will be to design a choose your ship form
+        TODO: The next html task will be to gather screen shots of ai game, and put together an intro all to put on the home page
     </h1>
+    <h1>
+        TODO: Then I need to use the json object to use my ship choice in a new game. I need to figure out what to do and how to explain the pygame module as I make the game choices
+    </h1>
+    <h1>
+        TODO: make a template for the choose forms
+    </h1> -->
     </body>
 
     {% endblock content %}

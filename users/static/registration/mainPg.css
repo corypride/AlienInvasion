@@ -1,0 +1,30 @@
+
+body{
+    background-image: url('../../static/registration/alienInvasionHome.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#main-content{
+    padding-top:5px;
+    padding-left:5px;
+    padding-right:5px;
+    padding-bottom:5px;
+    text-align: center;
+    background-color:light-grey;opacity:0.15;
+}
+
+#main-content:hover{
+    background-color:light-grey; opacity:1.0;
+}
+
+label{
+    font-size: 20px;
+    background-color: white;
+    color: black;
+}
+
+input{
+    font-size: 20px;
+}

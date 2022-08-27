@@ -8,7 +8,9 @@ app_name = 'aib_site'
 urlpatterns = [
     # Home page
     path('',views.index, name='index'),
+    # Display all Ships
     path('ships/',views.all_ships, name='all_ships'),
+    # Choose Ship From
     path('ships/choose/', views.ship_form, name='ship_form'),
     
 

@@ -4,15 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Log Out</title>
     {% extends "aib_site/base.html" %}
-    {% block styling_links %}{% endblock styling_links %}
+    {% block styling_links %}
+    <link type="text/css" rel="stylesheet" href="../../static/registration/mainPg.css">
+    <script src="../../static/registration/mainPg.js"></script>
+    {% endblock styling_links %}
 </head>
 {% block content %}
 
-<body class="container">
-    
-    <p>You have been logged out. Thank you for visiting our site!</p>
+<body class="container text-light">
+    <div class="text-center">
+        <h1 class="">You have been logged out. Thank you for visiting us!</p>
+    </div>
 </body>
 {% endblock content %}
 

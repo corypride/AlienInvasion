@@ -21,7 +21,9 @@ class Ship(models.Model):
         return  f"ID: {self.ship_id}, Name: {self.ship_name}, Colors: {self.ship_colors}, Desc: " + desc_str
   
 
-# ToDO: duplicate the ship model to make the other models alien ship or aliens, bullets, and backgrounds.
+# TODO: duplicate the ship model to make the other models alien ship or aliens, bullets, and backgrounds.
+
+# TODO: Make a helper function that will update/populate the ship, background, alien, and bullet tables with the imageName of the objects from the file. Will need to do a check to be sure that the item is not already in the database before it saves an item.
 
 # class GameOptions(models.Model):
 #     """Available options for ships, alien ship or aliens, bullets, and backgrounds."""

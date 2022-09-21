@@ -24,6 +24,7 @@ def ship_form(request):
     # data will be stored in a json file to be retrieved later and used for the customized alien invasion game
         filenameAndPath = "aib_site/static/aib_site/json/shipChoice.json"
         with open (filenameAndPath,"w") as f:
+			#change this to store the shipname and the file type example (ship.png)		
             shipId = {"shipId":int(request.POST["shipId"])}
             json.dump(shipId,f)
             f.close()

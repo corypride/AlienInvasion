@@ -15,8 +15,8 @@ def all_ships(request):
     """This page displays all the ships options for Alien Invasion Build."""
     # May eventually change this to show all components
     ships = Ship.objects.all()
-    context = {"ships":ships}
-    return render(request,'aib_site/all_ships.html',context)
+    context = {"ships":ships, "pgName":'All Sites'}
+    return render(request,'aib_site/all.html',context)
 
 def ship_form(request):
     """This page displays a form that allows users to select the ship they want to use in a customized version of Alien Invasion."""
@@ -38,9 +38,15 @@ def ship_form(request):
     context = {"ships":ships}
     return render(request,'aib_site/pick_ship.html',context)
 
+def all_sites(request):
+    """This page displays all the site options for Alien Invasion Build."""
+    # May eventually change this to show all components
+    sites = Battlesite.objects.all()
+    context = {"sites":sites, "pgName":'All Sites'}
+    return render(request,'aib_site/all.html',context)
+
 def battlesite_form(request):
     """This page displays a form that allows users to select the Battle site they want to use in a customized version of Alien Invasion."""
-
 
     if request.method == 'POST':
         # POST data submitted; process data
@@ -59,7 +65,5 @@ def battlesite_form(request):
     sites = Battlesite.objects.all()
     context = {"sites":sites}
     return render(request,'aib_site/pick_battlesite.html',context)
-
-
 
 

@@ -22,5 +22,18 @@
 </body>
 {% block content %}{% endblock content %}
 
+<div class="portfolio-item text-center">
+    <a class="portfolio-link" data-toggle="modal"
+        onclick="populateForm('{{site.site_name}}','{{site.site_displayName}}')"
+        data-target="#formModal">
+        
 
+        <!-- <img class="img-fluid"
+            src="../../static/aib_site/py_code/alien_invasion/assets/images/backgrounds/{{site.site_name}}"> -->
+    </a>
+    <div class="portfolio-caption">
+        <div class="portfolio-caption-heading">{{site.site_displayName.capitalize}}</div>
+        <div class="portfolio-caption-subheading text-muted">{{site.site_description}}</div>
+    </div>
+</div>
 

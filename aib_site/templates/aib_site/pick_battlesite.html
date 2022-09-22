@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choose A Ship</title>
+    <title>Choose Your Battle Site</title>
     {% extends 'aib_site/base.html' %}
     {% block styling_links %}
     <script src="../../static/aib_site/js/ship_form.js"></script>
@@ -15,7 +15,17 @@
 
 <body class="container">
 
-  
+  <div class="container">
+      <h1 class="m-auto">Choose Your Battle Site!</h1>
+      <div class="row">
+          {% for site in sites %}
+          <div class="col-lg-6 col-sm-12">
+              <img class="img-fluid" src="../../static/aib_site/py_code/alien_invasion/assets/images/backgrounds/{{site.site_name}}">
+              <p>{{site.site_displayName}}</p>
+          </div>
+          {% endfor %}
+      </div>
+  </div>
 
 </body>
 {% endblock content%}

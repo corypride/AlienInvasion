@@ -10,8 +10,10 @@ urlpatterns = [
     path('',views.index, name='index'),
     # Display all Ships
     path('ships/',views.all_ships, name='all_ships'),
-    # Choose Ship From
+    # Choose Ship Form
     path('ships/choose/', views.ship_form, name='ship_form'),
+    # Choose a Background Form
+    path('battlesites/choose',views.battlesite_form,name='battlesite_form'),
     
 
     # for the path() function - the first arg is a string that helps Django route the current request properly. Django receives the requested URL and tries to route the request to a view. It does this by searching all the URL patterens i've defined to find one that matches the current request. Django ignores the base URL for the project(http://localhost:8000/), so the empty string ('') matches the base URL. Any other URL won't match this pattern, and Django will return an error page if the URL requested does not match any existing URL patterns.

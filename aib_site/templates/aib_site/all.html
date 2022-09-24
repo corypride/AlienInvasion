@@ -60,7 +60,27 @@
      </table>
      {% endif %}
 
-
+     {% if bullets %}
+     <marquee>
+        <h1 class="text-primary">Take your time to look at all the bullet options</h1>
+     </marquee> 
+     <table class="table text-center table-striped"> 
+         <thead class="thead-dark">
+             <th>Bullet Name</th>
+             <th>Bullet Description</th>
+             <th>Bullet Image</th>
+         </thead>
+         {% for bullet in bullets %}
+         <tr>
+             <td>{{bullet.bullet_displayName}}</td>
+             <td>{{bullet.bullet_description}}</td>
+             <td>
+                 <img class="img-fluid" src="../../static/aib_site/py_code/alien_invasion/assets/images/bullets/{{bullet.bullet_name}}" alt="..." />
+             </td>
+         </tr>
+         {% endfor %}
+     </table>
+     {% endif %}
 
 </body>
 {% endblock content %}

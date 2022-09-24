@@ -4,6 +4,7 @@ from django import forms
 
 from .models import Ship
 from .models import Battlesite
+from .models import Bullet
 # from .forms import ShipForm
 
 # Create your views here.
@@ -66,4 +67,9 @@ def battlesite_form(request):
     context = {"sites":sites}
     return render(request,'aib_site/pick_battlesite.html',context)
 
+def all_bullets(request):
+    """This page displays all the ships options for Alien Invasion Build."""
+    bullets = Bullet.objects.all()
+    context = {"bullets":bullets}
+    return render(request,'aib_site/all.html',context)
 

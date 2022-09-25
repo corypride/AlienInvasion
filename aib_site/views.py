@@ -5,7 +5,7 @@ from django import forms
 from .models import Ship
 from .models import Battlesite
 from .models import Bullet
-# from .forms import ShipForm
+
 
 # Create your views here.
 def index(request):
@@ -72,4 +72,24 @@ def all_bullets(request):
     bullets = Bullet.objects.all()
     context = {"bullets":bullets}
     return render(request,'aib_site/all.html',context)
+
+def bullet_form(request):
+    """This page displays a form that allows users to select the bullets they want to use in a customized version of Alien Invasion."""
+    if request.method == 'POST':
+    # POST data submitted; process data
+    # data will be stored in a json file to be retrieved later and used for the customized alien invasion game
+    # print("test")
+        filenameAndPath = "aib_site/static/aib_site/json/bulletChoices.json"
+        with open (filenameAndPath,"w") as f:
+			#change this to store the shipname and the file type example (ship.png)		
+            bullets = {"bullet1Name":request.POST["bulletName1"],"bullet2Name":request.POST["bulletName2"]}
+            json.dump(bullets,f)
+            f.close()
+            # eventually there will be another page to show the addition of the ship of your choosing to code. And there will be an explanation to go with it
+            return redirect("aib_site:all_bullets")
+
+    # No data submitted; display the Choose form
+    bullets = Bullet.objects.all()
+    context = {'bullets':bullets}
+    return render(request,'aib_site/pick_bullets.html',context)
 

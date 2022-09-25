@@ -55,6 +55,24 @@ class Bullet(models.Model):
 
         return  f"ID: {self.bullet_id}, Name: {self.bullet_name}, Desc: " + desc_str
 
+class Invader(models.Model):
+    """Invader for alien invasion"""
+    invader_id = models.AutoField(primary_key=True,unique=True,auto_created=True)
+    invader_name = models.CharField(max_length=200,null=False,unique=True)
+    invader_displayName = models.CharField(max_length=200,null=False)
+    invader_description = models.TextField(max_length=500,null=False)
+
+    def __str__(self):
+        """String representation of the invader model"""
+        
+        if len(self.invader_description) > 50:
+            desc_str = f"{self.invader_description[:50]}..."
+        else:
+            desc_str = self.invader_description
+
+        return  f"ID: {self.invader_id}, Name: {self.invader_name}, Desc: " + desc_str
+
+    
 
 # TODO: duplicate the ship model to make the other models alien ship or aliens, bullets, and backgrounds.
 

@@ -5,6 +5,7 @@ from django import forms
 from .models import Ship
 from .models import Battlesite
 from .models import Bullet
+from .models import Invader
 
 
 # Create your views here.
@@ -12,9 +13,15 @@ def index(request):
     """The home page for Alien Invasion Build."""
     return render(request,'aib_site/index.html')
 
+def all_invaders(request):
+    """This page displays all the invader options for Alien Invasion Build."""
+    invaders = Invader.objects.all()
+    context = {"invaders":invaders, "pgName":'All Invaders'}
+    return render(request,'aib_site/all.html',context)
+
+
 def all_ships(request):
     """This page displays all the ships options for Alien Invasion Build."""
-    # May eventually change this to show all components
     ships = Ship.objects.all()
     context = {"ships":ships, "pgName":'All Sites'}
     return render(request,'aib_site/all.html',context)

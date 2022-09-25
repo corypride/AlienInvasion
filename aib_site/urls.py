@@ -20,6 +20,8 @@ urlpatterns = [
     path('bullets/choose',views.bullet_form,name='bullet_form'),
     # Display all bullets
     path('bullets/',views.all_bullets,name='all_bullets'),
+    # Display all invaders
+    path('invaders/',views.all_invaders,name='all_invaders'),
 
     
 

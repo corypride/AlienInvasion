@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    {% extends "aib_site/base.html" %}
+    {% block styling_links %}
+    <link type="text/css" rel="stylesheet" href="../../static/registration/mainPg.css">
+    <script src="../../static/registration/mainPg.js"></script>
+    {% endblock styling_links %}
+</head>
+{% block content %}
+
+<body class="container-fluid text-light">
+
+    <div id="main-content">
+        <label>Login Now!</label>
+        <form id="theform" class="" method="POST" action="{% url 'users:login' %}">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button class="btn btn-primary" name='submit'>Log in</button>
+            <input type="hidden" name="next" value="{% url 'aib_site:index' %}" />
+        </form>
+    </div>
+
+</body>
+{% endblock content %}
+
+</html>

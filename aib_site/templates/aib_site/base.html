@@ -16,18 +16,27 @@
     <div class="collapse navbar-collapse font-weight-bolder mr-auto mt-2 mt-md-0" id="navbarTogglerMain">
        {% if user.is_authenticated %}
             Hello, {{user.username}}
-        
-            <a class="nav-link m-auto" href="{% url 'users:logout' %}">Log Out</a> 
-            <a class="nav-link m-auto" href="{% url 'aib_site:ship_form'%}">Choose your Ship</a>     
-            <a class="nav-link m-auto" href="{% url 'aib_site:battlesite_form'%}">Choose your Site</a>    
+            <a class="nav-link m-auto" href="{% url 'users:logout' %}">Log Out</a>   
+            <a class="nav-link m-auto" href="{% url 'aib_site:battlesite_form'%}">Choose your Settings Now!</a>    
         {% else %}
             <a class="nav-link m-auto" href="{% url 'users:register' %}">Register</a>
             <a class="nav-link m-auto" href="{% url 'users:login' %}">Log In</a>
         {% endif %}
-        <a class="nav-link m-auto" href="{% url 'aib_site:all_ships'%}">All Ships</a> 
-        <a class="nav-link m-auto" href="{% url 'aib_site:index'%}">Home</a> 
+        <select>
+            <option value="#test">
+                <a id="#test" class="nav-link m-auto" href="{% url 'aib_site:all_ships'%}">All Ships</a> 
+            </option>
+            <option>
+                <a class="nav-link m-auto" href="{% url 'aib_site:index'%}">Home</a> 
+            </option>
+            <option>
+                <a class="nav-link m-auto" href="{% url 'aib_site:all_sites'%}">All Sites</a> 
+            </option>
+        </select>
         
-        <a class="nav-link m-auto" href="{% url 'aib_site:all_sites'%}">All Sites</a> 
+        
+        
+        
     </div>
 </nav>
 <diV>

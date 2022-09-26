@@ -4,17 +4,19 @@
 
     <div class="navbar navbar-dark bg-dark text-primary">
         {% if user.is_authenticated %}
-            Hello, {{user.username}}
-            <a href="{% url 'users:logout' %}">Log Out</a> 
-            <a href="{% url 'aib_site:ship_form'%}">Choose your Ship</a>      
-        {% else %}
-            <a href="{% url 'users:register' %}">Register</a>
-            <a href="{% url 'users:login' %}">Log In</a>
-        {% endif %}
-        <a href="{% url 'aib_site:all_ships'%}">All Ships</a> 
-        <a href="{% url 'aib_site:index'%}">Home</a> 
-        
-        
+        Hello, {{user.username}}
+    
+        <a class="nav-link m-auto" href="{% url 'users:logout' %}">Log Out</a> 
+        <a class="nav-link m-auto" href="{% url 'aib_site:ship_form'%}">Choose your Ship</a>     
+        <a class="nav-link m-auto" href="{% url 'aib_site:battlesite_form'%}">Choose your Settings Now!</a>    
+    {% else %}
+        <a class="nav-link m-auto" href="{% url 'users:register' %}">Register</a>
+        <a class="nav-link m-auto" href="{% url 'users:login' %}">Log In</a>
+    {% endif %}
+    <a class="nav-link m-auto" href="{% url 'aib_site:all_ships'%}">All Ships</a> 
+    <a class="nav-link m-auto" href="{% url 'aib_site:index'%}">Home</a> 
+    
+    <a class="nav-link m-auto" href="{% url 'aib_site:all_sites'%}">All Sites</a>        
     </div>
         <marquee style="font-size: xx-large;">Welcome to the 👽 Alien Invasion 👽 Builder website!</marquee>
     

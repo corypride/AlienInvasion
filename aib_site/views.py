@@ -38,7 +38,9 @@ def invader_form(request):
             json.dump(invader_name,f)
             f.close()
             # eventually there will be another page to show the addition of the ship of your choosing to code. And there will be an explanation to go with it
-            return redirect("aib_site:all_invaders")
+            return redirect("aib_site:bullet_form")
+           
+             
 
     # No data submitted; display the Choose form
     invaders = Invader.objects.all()
@@ -65,7 +67,9 @@ def ship_form(request):
             json.dump(ship_name,f)
             f.close()
             # eventually there will be another page to show the addition of the ship of your choosing to code. And there will be an explanation to go with it
-            return redirect("aib_site:all_ships")
+            return redirect("aib_site:invader_form")
+            
+            
 
     # No data submitted; display the Choose form
     ships = Ship.objects.all()
@@ -95,7 +99,8 @@ def battlesite_form(request):
             json.dump(site_name,f)
             f.close()
             # eventually there will be another page to show the addition of the site of your choosing to code. And there will be an explanation to go with it Or... This will go to the next page to choose the next game option
-            return redirect("aib_site:all_sites")
+            return redirect("aib_site:ship_form")
+           
 
 
     sites = Battlesite.objects.all()
@@ -121,13 +126,12 @@ def bullet_form(request):
             json.dump(bullets,f)
             f.close()
             # eventually there will be another page to show the addition of the ship of your choosing to code. And there will be an explanation to go with it
-            return redirect("aib_site:all_bullets")
+            return redirect("aib_site:play_game")
 
     # No data submitted; display the Choose form
     bullets = Bullet.objects.all()
     context = {'bullets':bullets}
     return render(request,'aib_site/pick_bullets.html',context)
-
 
 def saveScore(request):
     """Save score after a game"""
@@ -140,8 +144,8 @@ def saveScore(request):
     gd = dictObj["todaysDate"]
     gt = dictObj["endTime"]
     
-    # s = Score(user= user,highScore= hs,lastLevel= ll,gameDate= gd,gameTime= gt)
-    # s.save(force_insert=True)
+    s = Score(user= user,highScore= hs,lastLevel= ll,gameDate= gd,gameTime= gt)
+    s.save(force_insert=True)
     
     scores = Score.objects.order_by("-highScore")
     context = {"scores":scores}
@@ -157,12 +161,10 @@ def playGame(request):
 
     # also the option need to be on that page to repick settings
 
-    # do the logical order of the pages
-
     if request.method == 'POST' and request.POST["willPlay"]:
         subprocess.run(commandLineString)
         # todo: put the save score here too
-        return redirect("aib_site:play_game")
+        return redirect("aib_site:save_score")
 
     # otherwise render the page with all the users choices (this requires all the filepaths to the choices)
     

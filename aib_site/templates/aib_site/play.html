@@ -61,7 +61,6 @@
                                     <img id="invaderName" src="../../static/aib_site/py_code/alien_invasion/assets/images/aliens/{{invaderName}}" style="max-height:100px;min-height:100px" class="img-fluid">
             
                                 </a>
-            
                             </div>
                         </div>
             
@@ -79,9 +78,14 @@
                             </div>
                         </div>
                         
-            
-            
+                        
+                        
                     </div>
+                    <form method="POST" action="{% url 'aib_site:play_game' %}" >
+                        {% csrf_token %}
+                        <input type="hidden" value="True" name="willPlay">
+                        <input class="btn btn-success" type="submit" value="Play Alien Invasion Now!">
+                    </form>
             
             </div>
 

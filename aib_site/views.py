@@ -159,14 +159,15 @@ def playGame(request):
 
     # do the logical order of the pages
 
-    if request.method == 'POST' and request.POST["willPlay"] == True:
-        subprocess.run(getGameSettingsFromJson())
+    if request.method == 'POST' and request.POST["willPlay"]:
+        subprocess.run(commandLineString)
+        # todo: put the save score here too
         return redirect("aib_site:play_game")
 
     # otherwise render the page with all the users choices (this requires all the filepaths to the choices)
     
     settingList = getGameSettingsFromJson()[2:]
-    print(settingList)
+    # print(settingList)
     context = {}
     context.update(width=settingList[0])
     context.update(height=settingList[1])

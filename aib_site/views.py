@@ -1,7 +1,8 @@
 import json
 from django.shortcuts import render, redirect
 from django import forms
-from .static.aib_site.py_code.alien_invasion.communication import getDate
+from .static.aib_site.py_code.alien_invasion.communication import getGameSettingsFromJson
+import subprocess
 
 from .models import Ship
 from .models import Battlesite
@@ -139,11 +140,41 @@ def saveScore(request):
     gd = dictObj["todaysDate"]
     gt = dictObj["endTime"]
     
-    s = Score(user= user,highScore= hs,lastLevel= ll,gameDate= gd,gameTime= gt)
-    s.save(force_insert=True)
+    # s = Score(user= user,highScore= hs,lastLevel= ll,gameDate= gd,gameTime= gt)
+    # s.save(force_insert=True)
     
-    scores = Score.objects.all()
+    scores = Score.objects.order_by("-highScore")
     context = {"scores":scores}
     return render(request,'aib_site/highScores.html',context)
 
+
+
+def playGame(request):
+    """Display all the players choices and a play button to start the game"""
+    commandLineString = getGameSettingsFromJson()
+
+    # TODO: on the submit button of this form i need to put the saveScore() also I need to modify that method to check if the info is already saved before it saves it again
+
+    # also the option need to be on that page to repick settings
+
+    # do the logical order of the pages
+
+    if request.method == 'POST' and request.POST["willPlay"] == True:
+        subprocess.run(getGameSettingsFromJson())
+        return redirect("aib_site:play_game")
+
+    # otherwise render the page with all the users choices (this requires all the filepaths to the choices)
+    
+    settingList = getGameSettingsFromJson()[2:]
+    print(settingList)
+    context = {}
+    context.update(width=settingList[0])
+    context.update(height=settingList[1])
+    context.update(siteName=settingList[2])
+    context.update(shipName=settingList[3])
+    context.update(invaderName=settingList[4])
+    context.update(bulletName=settingList[5])
+
+    return render(request,"aib_site/play.html",context)
+        
 

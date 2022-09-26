@@ -37,7 +37,7 @@
 
                         </div>
                     </div>
-                    
+
 
 
                 </div>
@@ -53,7 +53,7 @@
                                 {% endfor%}
                             </select>
                         </div>
-                      
+
                         <div class="container text-right">
                             <input class="btn btn-primary" value="Submit Choices" type="submit">
                         </div>
@@ -66,16 +66,16 @@
 
                     let bullet1 = document.getElementById("bullet1");
                     let drop1 = document.getElementById("bulletName1");
-                    
+
                     bullet1.innerHTML = `<img style="max-height:100px" class="img-fluid" src="../../static/aib_site/images/bulletImageConverts/${drop1.value}">`
-                  
+
                     drop1.addEventListener("change", function (e) {
                         nm = e.target.value;
 
                         bullet1.innerHTML = `<img style="max-height:100px" class="img-fluid" src="../../static/aib_site/images/bulletImageConverts/${nm}">`
                     })
 
-                   
+
 
 
 
@@ -83,7 +83,7 @@
             </script>
         </div>
     </section>
-    </div>
+
 </body>
 {% endblock content%}
 

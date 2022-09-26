@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -20,7 +21,6 @@ class Ship(models.Model):
 
         return  f"ID: {self.ship_id}, Name: {self.ship_name}, Colors: {self.ship_colors}, Desc: " + desc_str
   
-
 class Battlesite(models.Model):
     """Battle site for alien invasion"""
     site_id = models.AutoField(primary_key=True,auto_created=True,unique=True)
@@ -36,7 +36,6 @@ class Battlesite(models.Model):
             desc_str = self.site_description
         
         return f"ID: {self.site_id}, Site Name: {self.site_name}, Desc: " + desc_str
-
 
 class Bullet(models.Model):
     """Bullet for alien invasion"""
@@ -72,23 +71,20 @@ class Invader(models.Model):
 
         return  f"ID: {self.invader_id}, Name: {self.invader_name}, Desc: " + desc_str
 
-    
+class Score(models.Model):
+    """Model to hold scores from alien invasion"""
+    score_id = models.AutoField(primary_key=True,unique=True,auto_created=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    highScore = models.IntegerField(default=0,null=False)
+    lastLevel = models.IntegerField(default=1,null=False)
+    gameDate = models.CharField(max_length=10,null=False)
+    gameTime = models.CharField(max_length=8,null=False)
 
-# TODO: duplicate the ship model to make the other models alien ship or aliens, bullets, and backgrounds.
+    def __str__(self):
+        """String representation of a Players Score"""
+        theString = f"User Name: {self.user}, Last Level Played: {self.lastLevel}, High Score: {self.highScore}"
+        return theString
+
 
 # TODO: Make a helper function that will update/populate the ship, background, alien, and bullet tables with the imageName of the objects from the file. Will need to do a check to be sure that the item is not already in the database before it saves an item. Think about how you will match the item that the user chooses from the site with the dynamically generated lists of the ai_game
 
-# class GameOptions(models.Model):
-#     """Available options for ships, alien ship or aliens, bullets, and backgrounds."""
-#     # Once the table is populated it will be used to populate selects on an html page
-#     # ships
-#     # aliens
-#     # alien ships
-#     # bullet
-#     # backgrounds
-
-
-
-
-# class UserSettings(models.Model):
-#     """User specific settings for a game of alien invasion"""

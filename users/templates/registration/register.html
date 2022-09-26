@@ -12,13 +12,12 @@
 
 <body class="container">
 
-   <form  class="m-5" method="POST" action="{% url 'users:register' %}">
+    <form class="m-5" method="POST" action="{% url 'users:register' %}">
         {% csrf_token %}
         {{form.as_p}}
         <button name='submit'>Log in</button>
-        <input type ="hidden" name="next" 
-            value="{% url 'aib_site:index' %}"/>
-   </form>
+        <input type="hidden" name="next" value="{% url 'aib_site:index' %}" />
+    </form>
 
 </body>
 {% endblock content %}

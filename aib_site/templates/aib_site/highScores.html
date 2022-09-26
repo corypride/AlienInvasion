@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View All</title>
+    {%extends 'aib_site/base.html' %}
+    {% block styling_links %}
+        
+    {% endblock styling_links %}
+    
+</head>
+{% block content %}
+<body class="container">
+    {% if ships %}
+   <marquee>
+       <h1 class="text-primary">Take your time to look at all the ship options</h1>
+    </marquee> 
+    <table class="table text-center table-striped"> 
+        <thead class="thead-dark">
+            <th>Ship Id</th>
+            <th>Ship Name</th>
+            <th>Ship Colors</th>
+            <th>Ship Description</th>
+            <th>Ship Image</th>
+        </thead>
+        {% for ship in ships %}
+        <tr>
+            <td>{{ship.ship_id}}</td>
+            <td>{{ship.ship_displayName}}</td>
+            <td>{{ship.ship_colors}}</td>
+            <td>{{ship.ship_description}}</td>
+            <td>
+                <img class="img-fluid" src="../../static/aib_site/py_code/alien_invasion/assets/images/ships/{{ship.ship_name}}" alt="..." />
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+</body>
+{% endblock content %}
+</html>

@@ -18,13 +18,13 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Bullets Portfolio</h2>
-                <h3 class="section-subheading text-muted">Choose the type of bullet to arm your ship with</h3>
+                <h3 class="section-subheading text-muted">Choose two types of bullets to arm your ship with</h3>
             </div>
 
             <div class="container bg-dark">
 
                 <div class="row">
-                    <div class="col-lg-12 col-sm-12 col-m-12">
+                    <div class="col-lg-6 col-sm-12 col-m-6">
                         <div class="portfolio-item text-center">
                             <a class="portfolio-link">
                                 <div class="portfolio-hover">
@@ -37,14 +37,26 @@
 
                         </div>
                     </div>
-                    
+                    <div class="col-lg-6 col-sm-12 col-m-6">
+                        <div class="portfolio-item text-center">
+                            <a class="portfolio-link">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i>👽</div>
+                                </div>
+
+                                <img id="bullet2" style="max-height:100px" class="img-fluid">
+
+                            </a>
+
+                        </div>
+                    </div>
 
 
                 </div>
                 <form method="POST" action="{% url 'aib_site:bullet_form' %}">
                     {% csrf_token %}
                     <div class="row text-center">
-                        <div class="col-12">
+                        <div class="col-6">
                             <select id="bulletName1" name="bulletName1">
                                 {% for bullet in bullets %}
                                 {% if bullet.bullet_name != "theBigBang.bmp" %}
@@ -53,7 +65,15 @@
                                 {% endfor%}
                             </select>
                         </div>
-                      
+                        <div class="col-6">
+                            <select c id="bulletName2" name="bulletName2">
+                                {% for bullet in bullets %}
+                                    {% if bullet.bullet_name != "theBigBang.bmp" %}
+                                    <option value="{{bullet.bullet_name}}">{{bullet.bullet_displayName}}</option>
+                                    {% endif %}
+                                {% endfor%}
+                            </select>
+                        </div>
                         <div class="container text-right">
                             <input class="btn btn-primary" value="Submit Choices" type="submit">
                         </div>
@@ -65,17 +85,27 @@
 
 
                     let bullet1 = document.getElementById("bullet1");
+
+
+
+                    let bullet2 = document.getElementById("bullet2")
+
                     let drop1 = document.getElementById("bulletName1");
-                    
+                    let drop2 = document.getElementById("bulletName2");
                     bullet1.innerHTML = `<img style="max-height:100px" class="img-fluid" src="../../static/aib_site/images/bulletImageConverts/${drop1.value}">`
-                  
+                    bullet2.innerHTML = `<img style="max-height:100px" class="img-fluid" src="../../static/aib_site/images/bulletImageConverts/${drop2.value}">`
+
                     drop1.addEventListener("change", function (e) {
                         nm = e.target.value;
 
                         bullet1.innerHTML = `<img style="max-height:100px" class="img-fluid" src="../../static/aib_site/images/bulletImageConverts/${nm}">`
                     })
 
-                   
+                    drop2.addEventListener("change", function (e) {
+                        nm = e.target.value;
+
+                        bullet2.innerHTML = `<img style="max-height:100px" class="img-fluid" src="../../static/aib_site/images/bulletImageConverts/${nm}">`
+                    })
 
 
 

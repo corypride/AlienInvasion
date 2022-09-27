@@ -13,15 +13,15 @@
 </head>
 {% block content%}
 
-<body class="container">
+<body class="container" style="background-image: url(../../static/aib_site/images/fireySkyBackground.png); background-repeat: no-repeat;background-size: cover;">
     <section class="page-section bg-light" id="portfolio">
-        <div class="container">
+        <div class="container p-4">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Bullets Portfolio</h2>
                 <h3 class="section-subheading text-muted">Choose the type of bullet to arm your ship with</h3>
             </div>
 
-            <div class="container bg-dark">
+            <div class="container bg-dark pb-5">
 
                 <div class="row">
                     <div class="col-lg-12 col-sm-12 col-m-12">
@@ -44,7 +44,7 @@
                 <form method="POST" action="{% url 'aib_site:bullet_form' %}">
                     {% csrf_token %}
                     <div class="row text-center">
-                        <div class="col-12">
+                        <div class="col-12 mb-2">
                             <select id="bulletName1" name="bulletName1">
                                 {% for bullet in bullets %}
                                 {% if bullet.bullet_name != "theBigBang.bmp" %}
@@ -54,8 +54,8 @@
                             </select>
                         </div>
 
-                        <div class="container text-right">
-                            <input class="btn btn-primary" value="Submit Choices" type="submit">
+                        <div class="container m-auto">
+                            <input class="btn btn-primary" value="Submit Choice" type="submit">
                         </div>
                     </div>
                 </form>

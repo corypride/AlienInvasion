@@ -160,7 +160,7 @@ def highScores(request):
         temp[i] = {"rank":i,"score":score}
         
         i+=1
-    print(test)
+
 
     context = {"scores":temp}
     return render(request,'aib_site/highScores.html',context)

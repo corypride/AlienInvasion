@@ -1,64 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View All</title>
     {%extends 'aib_site/base.html' %}
     {% block styling_links %}
-        <script>
-            window.onload = function(){
-                document.getElementById("welcome").style.display="none";
-            }
-        </script>
+    <script>
+        window.onload = function () {
+            document.getElementById("welcome").style.display = "none";
+        }
+    </script>
     {% endblock styling_links %}
-    
+
 </head>
 {% block content %}
-<body class="container">
+
+<body class="container"
+    style="background-image: url(../../static/aib_site/images/fireySkyBackground.png); background-repeat: no-repeat;background-size: cover;">
     {% if scores %}
-   <marquee>
-       <h1 class="text-primary">Congrats to all the players that made the cut!!</h1>
-    </marquee> 
-    <table class="table table-condensed text-center table-striped" style="font-size: xx-large;"> 
+    <marquee>
+        <h1 class="text-primary">Congrats to all the players that made the cut!!</h1>
+    </marquee>
+    <table class="table table-condensed text-center table-striped" style="font-size: xx-large;">
         <thead class="thead-dark">
             <th>Rank</th>
-            <th>UserName:</th>
-            <th>Last Level Played</th>
-            <th>Date:</th>
+            <th>UserName</th>
             <th>High Score</th>
+            <th>Last Level Played</th>
         </thead>
         {% for k, score in scores.items %}
-            {% if k <= 3   %}
-        <tr class="table-primary">
+        {% if k <= 3 %} <tr class="table-primary">
             <td>{{k}}</td>
-            <td>{{score.score.user.username}}</td>
-            <td>{{score.score.lastLevel}}</td>
-            <td>{{score.score.gameDate}}</td>
+            <td>{{score.score.user.username.capitalize}}</td>
             <td>{{score.score.highScore}}</td>
-        </tr>
-        {% elif k <= 7 %}
-        <tr class="table-success">
-            <td>{{k}}</td>
-            <td>{{score.score.user.username}}</td>
             <td>{{score.score.lastLevel}}</td>
-            <td>{{score.score.gameDate}}</td>
-            <td>{{score.score.highScore}}</td>
-        </tr>
-            {% else %}
-            <tr class="table-secondary">
-                <td>{{k}}</td>
-                <td>{{score.score.user.username}}</td>
-                <td>{{score.score.lastLevel}}</td>
-                <td>{{score.score.gameDate}}</td>
-                <td>{{score.score.highScore}}</td>
             </tr>
-            {% endif %}
-        {% endfor %}
+            {% elif k <= 7 %} <tr class="table-success">
+                <td>{{k}}</td>
+                <td>{{score.score.user.username.capitalize}}</td>
+                <td>{{score.score.highScore}}</td>
+                <td>{{score.score.lastLevel}}</td>
+                </tr>
+                {% else %}
+                <tr class="table-secondary">
+                    <td>{{k}}</td>
+                    <td>{{score.score.user.username.capitalize}}</td>
+                    <td>{{score.score.highScore}}</td>
+                    <td>{{score.score.lastLevel}}</td>
+                </tr>
+                {% endif %}
+                {% endfor %}
     </table>
 
     {% endif %}
 
 </body>
 {% endblock content %}
+
 </html>

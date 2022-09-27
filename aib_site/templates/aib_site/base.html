@@ -13,9 +13,9 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <span class="navbar-brand text-light">Nav Bar</span>
-    <div class="collapse navbar-collapse font-weight-bolder mr-auto mt-2 mt-md-0" id="navbarTogglerMain">
+    <div class="collapse navbar-collapse font-weight-bolder mr-auto mt-2 mt-md-0 text-light" id="navbarTogglerMain">
        {% if user.is_authenticated %}
-            Hello, {{user.username}}
+            Hello, {{user.username.capitalize}}
             <a class="nav-link m-auto" href="{% url 'users:logout' %}">Log Out</a>   
             <a class="nav-link m-auto" href="{% url 'aib_site:battlesite_form'%}">Choose your Settings Now!</a>    
         {% else %}

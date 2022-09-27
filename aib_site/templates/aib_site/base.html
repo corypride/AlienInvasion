@@ -21,25 +21,10 @@
         {% else %}
             <a class="nav-link m-auto" href="{% url 'users:register' %}">Register</a>
             <a class="nav-link m-auto" href="{% url 'users:login' %}">Log In</a>
-        {% endif %}
-        <select>
-            <option value="#test">
-                <a id="#test" class="nav-link m-auto" href="{% url 'aib_site:all_ships'%}">All Ships</a> 
-            </option>
-            <option>
-                <a class="nav-link m-auto" href="{% url 'aib_site:index'%}">Home</a> 
-            </option>
-            <option>
-                <a class="nav-link m-auto" href="{% url 'aib_site:all_sites'%}">All Sites</a> 
-            </option>
-        </select>
-        
-        
-        
-        
+        {% endif %}     
     </div>
 </nav>
 <diV>
-    <marquee style="font-size: xx-large;">Welcome to the 👽 Alien Invasion 👽 Builder website!</marquee>
+    <marquee id="welcome" style="font-size: xx-large;">Welcome to the 👽 Alien Invasion 👽 Builder website!</marquee>
 </diV>
 {% block content %}{% endblock content %}

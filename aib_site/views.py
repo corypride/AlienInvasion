@@ -146,9 +146,23 @@ def saveScore(request):
     
     s = Score(user= user,highScore= hs,lastLevel= ll,gameDate= gd,gameTime= gt)
     s.save(force_insert=True)
+    return redirect("aib_site:high_scores")
     
-    scores = Score.objects.order_by("-highScore")
-    context = {"scores":scores}
+
+def highScores(request):
+    """Display a List of the top ten High Scores"""
+    scores = Score.objects.order_by("-highScore")[0:10]
+
+    # add a ranking to the collection so it can be displayed in the table
+    i = 1
+    temp = {}
+    for score in scores:
+        temp[i] = {"rank":i,"score":score}
+        
+        i+=1
+    print(test)
+
+    context = {"scores":temp}
     return render(request,'aib_site/highScores.html',context)
 
 

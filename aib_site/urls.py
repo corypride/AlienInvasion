@@ -26,6 +26,8 @@ urlpatterns = [
     path('invaders/choose',views.invader_form,name='invader_form'),
     # Save Score
     path('save/score',views.saveScore,name='save_score'),
+    # Display High Scores
+    path('highscores/',views.highScores,name='high_scores'),
     # Play Game
     path('play/',views.playGame,name='play_game'),
     

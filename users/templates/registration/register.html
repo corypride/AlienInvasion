@@ -20,7 +20,7 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="" style="background-image: url(../../static/registration/fireySkyBackground.png); background-repeat: no-repeat;background-size: cover;">
 
     <div class="container">
 
@@ -43,15 +43,14 @@
                                                 autocapitalize="none" required="" placeholder="User Name">
                                         </div>
                                     </div>
+                                    
                                     <div class="form-group row">
-                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <div class="col-sm-6">
                                             <input id="id_password1" name="password1" autocomplete="new-password"
                                                 required="" type="password" class="form-control form-control-user"
                                                 placeholder="Password">
                                         </div>
 
-                                    </div>
-                                    <div class="form-group row">
                                         <div class="col-sm-6">
                                             <input id="id_password2" name="password2" autocomplete="new-password"
                                                 required="" type="password" type="password"
@@ -59,13 +58,13 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <button class="btn btn-primary btn-user btn-block" name='submit'>Log in</button>
+                                        <button class="btn btn-danger" name='submit'>Log in</button>
                                     </div>
                                     <input type="hidden" name="next" value="{% url 'aib_site:index' %}" />
                                 </form>
                                 <hr>
                                 <div class="text-center">
-                                    <a class="small" href="{% url 'users:login' %}">Already have an account? Login!</a>
+                                    <a class="small text-danger" href="{% url 'users:login' %}">Already have an account? Login!</a>
                                 </div>
                             </div>
                         </div>

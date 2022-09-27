@@ -4,84 +4,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>AIB Login</title>
 
     <!-- Custom fonts for this template-->
     <link href="../../static/registration/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-   
+
 
     <!-- Custom styles for this template-->
     <link href="../../static/registration/css/sb-admin-2.min.css" rel="stylesheet">
-   
+
+
     <script src="../../static/registration/mainPg.js"></script>
-    
+
 </head>
 
-<body class="bg-gradient-primary">
+<body class=""
+    style="background-image: url(../../static/registration/fireySkyBackground.png); background-repeat: no-repeat;background-size: cover;">
 
-    <body class="bg-gradient-primary">
+    <div class="container">
 
-        <div class="container">
-    
-            <div class="card o-hidden border-0 shadow-lg my-5">
-                <div class="card-body p-0">
-                    <!-- Nested Row within Card Body -->
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-                            <div class="p-5">
-                                <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Login Now!</h1>
-                                </div>
-                                <div>
-                                    <form id="theform" method="POST" action="{% url 'users:login' %}" class="user">
-                                        {% csrf_token %}
-                                        <div class="form-group row">
-                                            <div class="col-sm-6 mb-3 mb-sm-0">
-                                                <input type="text" class="form-control form-control-user" id="id_username"
-                                                    name="username" maxlength="150" autocomplete="username"
-                                                    autocapitalize="none" required="" placeholder="User Name">
-                                            </div>
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Login Now!<h1>
+                            </div>
+                            <div>
+                                <form id="theform" method="POST" action="{% url 'users:login' %}" class="user">
+                                    {% csrf_token %}
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                            <input type="text" class="form-control form-control-user" id="id_username"
+                                                name="username" maxlength="150" autocomplete="username"
+                                                autocapitalize="none" required="" placeholder="User Name">
                                         </div>
-                                        <div class="form-group row">
-                                            <div class="col-sm-6 mb-3 mb-sm-0">
-                                                <input id="id_password" name="password" autocomplete="current-password"
-                                                    required="" type="password" class="form-control form-control-user"
-                                                    placeholder="Password">
-                                            </div>
-    
-                                        </div>
-                                
-                                        <div class="form-group row">
-                                            <button class="btn btn-primary btn-user btn-block" name='submit'>Log in</button>
-                                        </div>
-                                        <input type="hidden" name="next" value="{% url 'aib_site:index' %}" />
-                                    </form>
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="{% url 'users:register' %}">Create An Account</a>
                                     </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                            <input id="id_password" name="password" autocomplete="current-password"
+                                                required="" type="password" class="form-control form-control-user"
+                                                placeholder="Password">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <button class="btn btn-danger" name='submit'>Log in</button>
+                                    </div>
+                                    <input type="hidden" name="next" value="{% url 'aib_site:index' %}" />
+                                </form>
+                                <hr>
+                                <div class="text-center">
+                                    <a class="small text-danger" href="{% url 'users:register' %}">Create An Account</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-    
         </div>
-    
-        <script src="../../static/registration/vendor/jquery/jquery.min.js"></script>
-        <script src="../../static/registration/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    
-        <!-- Core plugin JavaScript-->
-        <script src="../../static/registration/vendor/jquery-easing/jquery.easing.min.js"></script>
-    
-        <!-- Custom scripts for all pages-->
-        <script src="../../static/registration/js/sb-admin-2.min.js"></script>
-    
-    
-    </body>
 
-   
+    </div>
+
+    <script src="../../static/registration/vendor/jquery/jquery.min.js"></script>
+    <script src="../../static/registration/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="../../static/registration/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="../../static/registration/js/sb-admin-2.min.js"></script>
+
 
 </body>
 

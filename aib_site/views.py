@@ -1,8 +1,12 @@
 import json
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from django import forms
+
+# for converting the json objects and running the pygame in the terminal
 from .static.aib_site.py_code.alien_invasion.communication import getGameSettingsFromJson
 import subprocess
+# ________________________________
 
 from .models import Ship
 from .models import Battlesite
@@ -15,9 +19,11 @@ from .score import getScoreFromJSON
 
 
 # Create your views here.
+
 def index(request):
     """The home page for Alien Invasion Build."""
     return render(request,'aib_site/index.html')
+
 
 def all_invaders(request):
     """This page displays all the invader options for Alien Invasion Build."""
@@ -25,6 +31,7 @@ def all_invaders(request):
     context = {"invaders":invaders, "pgName":'All Invaders'}
     return render(request,'aib_site/all.html',context)
 
+@login_required
 def invader_form(request):
     """This page displays a form that allows users to select the ship they want to use in a customized version of Alien Invasion."""
     if request.method == 'POST':
@@ -54,6 +61,7 @@ def all_ships(request):
     context = {"ships":ships, "pgName":'All Sites'}
     return render(request,'aib_site/all.html',context)
 
+@login_required
 def ship_form(request):
     """This page displays a form that allows users to select the ship they want to use in a customized version of Alien Invasion."""
     if request.method == 'POST':
@@ -83,6 +91,7 @@ def all_sites(request):
     context = {"sites":sites, "pgName":'All Sites'}
     return render(request,'aib_site/all.html',context)
 
+@login_required
 def battlesite_form(request):
     """This page displays a form that allows users to select the Battle site they want to use in a customized version of Alien Invasion."""
 
@@ -113,6 +122,7 @@ def all_bullets(request):
     context = {"bullets":bullets}
     return render(request,'aib_site/all.html',context)
 
+@login_required
 def bullet_form(request):
     """This page displays a form that allows users to select the bullets they want to use in a customized version of Alien Invasion."""
     if request.method == 'POST':
@@ -133,19 +143,21 @@ def bullet_form(request):
     context = {'bullets':bullets}
     return render(request,'aib_site/pick_bullets.html',context)
 
+@login_required
 def saveScore(request):
     """Save score after a game"""
     dictObj = getScoreFromJSON()
-    userId = int(dictObj["userId"])
-    
-    user = User.objects.get(id=userId)
-    hs = dictObj["highScore"]
-    ll = dictObj["lastLevel"]
-    gd = dictObj["todaysDate"]
-    gt = dictObj["endTime"]
-    
-    s = Score(user= user,highScore= hs,lastLevel= ll,gameDate= gd,gameTime= gt)
-    s.save(force_insert=True)
+    if dictObj["highScore"] > 0:
+        userId = int(dictObj["userId"])
+
+        user = User.objects.get(id=userId)
+        hs = dictObj["highScore"]
+        ll = dictObj["lastLevel"]
+        gd = dictObj["todaysDate"]
+        gt = dictObj["endTime"]
+
+        s = Score(user= user,highScore= hs,lastLevel= ll,gameDate= gd,gameTime= gt)
+        s.save(force_insert=True)
     return redirect("aib_site:high_scores")
     
 
@@ -161,12 +173,19 @@ def highScores(request):
         
         i+=1
 
-
-    context = {"scores":temp}
+    context = {"scores":temp,"highScore":True}
     return render(request,'aib_site/highScores.html',context)
 
 
+@login_required
+def continueWithSameSettings(request):
+    """Play alien invasion again with the previous settings"""
+    commandLineString = getGameSettingsFromJson()
+    subprocess.run(commandLineString)
+    return redirect("aib_site:save_score")
 
+
+@login_required
 def playGame(request):
     """Display all the players choices and a play button to start the game"""
     commandLineString = getGameSettingsFromJson()
@@ -177,11 +196,11 @@ def playGame(request):
 
     if request.method == 'POST' and request.POST["willPlay"]:
         subprocess.run(commandLineString)
-        # todo: put the save score here too
         return redirect("aib_site:save_score")
 
     # otherwise render the page with all the users choices (this requires all the filepaths to the choices)
     
+    # get the slice of the commandLineString that has the player's options
     settingList = getGameSettingsFromJson()[2:]
     # print(settingList)
     context = {}

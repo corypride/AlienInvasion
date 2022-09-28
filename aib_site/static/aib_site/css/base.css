@@ -1,0 +1,10 @@
+
+#navbarTogglerMain a:hover{
+    background-color: white;
+    border-radius: 10px; 
+}
+
+#chooseSettings:hover{
+    background-color: white;
+    border-radius: 10px; 
+}

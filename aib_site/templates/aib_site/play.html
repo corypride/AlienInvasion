@@ -14,13 +14,13 @@
 {% block content%}
 
 <body class="container" style="background-image: url(../../static/aib_site/images/fireySkyBackground.png); background-repeat: no-repeat;background-size: cover;">
-    <section class="page-section bg-light" id="portfolio">
+    <section class="page-section bg-light" id="portfolio" style="border-radius: 20px;">
         <div class="container">
             <div class="text-center pb-4">
                 <h2 class="section-heading text-uppercase">Here are your choices</h2>
                 <h3 class="section-subheading text-muted">Screen size: {{width}} X {{height}}</h3>
 
-                <div class="container bg-dark p-2">
+                <div class="container bg-dark p-2" style="border-radius: 20px;">
 
                     <div class="row">
                         <div class="col-lg-3 col-sm-12 col-m-3">
@@ -33,7 +33,7 @@
                                     <img id="siteName" src="../../static/aib_site/py_code/alien_invasion/assets/images/backgrounds/{{siteName}}" style="max-height:100px" class="img-fluid">
             
                                 </a>
-            
+                                
                             </div>
                         </div>
             
@@ -82,11 +82,17 @@
                         
                     </div>
                     <form method="POST" action="{% url 'aib_site:play_game' %}" >
+                        <div class="text-danger font-weight-bold">Game Notes: 
+                            <ul>
+                                <li>Press space bar to shoot</li>
+                                <li>Press q at anytime to quit the game</li>
+                            </ul>
+                        </div>
                         {% csrf_token %}
                         <input type="hidden" value="True" name="willPlay">
-                        <input class="btn btn-success" type="submit" value="Play Alien Invasion Now!">
+                        <input class="btn btn-primary" type="submit" value="Play Alien Invasion Now!">
                     </form>
-            
+                   
             </div>
 
 

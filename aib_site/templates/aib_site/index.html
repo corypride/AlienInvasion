@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alien Invasion Builder</title>
     {%extends "aib_site/base.html"%}
-    {% block styling_links %}{% endblock styling_links %}
+    {% block styling_links %}
+    <link type="text/css" rel="stylesheet" href="../../static/aib_site/css/index.css">
+    {% endblock styling_links %}
 </head>
     {% block content %} 
     <body class="container-fluid text-light" style="background-image: url('../../static/aib_site/images/alienInvasionHome.jpg');background-repeat: no-repeat;background-size: cover;background-attachment: fixed;">

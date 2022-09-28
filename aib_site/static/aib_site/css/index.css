@@ -1,0 +1,25 @@
+#chooseSettings{
+    /* add animations to the choose settings anchor */
+    animation-name: blinker;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    border-radius: 10px;
+    
+}
+
+@keyframes blinker{
+    from{background-color: transparent;}
+    50%{background-color: rgba(0, 0, 0,0.1);}
+    to{background-color: white;}
+
+}
+
+#navbarTogglerMain a:hover{
+    background-color: white;
+    border-radius: 10px; 
+}
+
+#chooseSettings:hover{
+    background-color: white;
+    border-radius: 10px; 
+}

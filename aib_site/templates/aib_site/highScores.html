@@ -32,13 +32,13 @@
             <th>Last Level Played</th>
         </thead>
         {% for k, score in scores.items %}
-        {% if k <= 3 %} <tr class="table-primary">
+        {% if k <= 3 %} <tr class="table-danger">
             <td>{{k}}</td>
             <td>{{score.score.user.username.capitalize}}</td>
             <td>{{score.score.highScore}}</td>
             <td>{{score.score.lastLevel}}</td>
             </tr>
-            {% elif k <= 7 %} <tr class="table-success">
+            {% elif k <= 7 %} <tr class="table-primary">
                 <td>{{k}}</td>
                 <td>{{score.score.user.username.capitalize}}</td>
                 <td>{{score.score.highScore}}</td>

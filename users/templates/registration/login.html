@@ -57,9 +57,15 @@
                                     <input type="hidden" name="next" value="{% url 'aib_site:index' %}" />
                                 </form>
                                 <hr>
-                                <div class="text-center">
-                                    <a class="small text-danger" href="{% url 'users:register' %}">Create An Account</a>
-                                </div>
+                                <row>
+                                    <div class="col">
+                                        <a class="small text-danger" href="{% url 'users:register' %}">Create An
+                                            Account</a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="small text-danger" href="{% url 'aib_site:index' %}">Home</a>
+                                    </div>
+                                </row>
                             </div>
                         </div>
                     </div>

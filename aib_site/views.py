@@ -140,6 +140,7 @@ def bullet_form(request):
 
     # No data submitted; display the Choose form
     bullets = Bullet.objects.all()
+    print(bullets)
     context = {'bullets':bullets}
     return render(request,'aib_site/pick_bullets.html',context)
 

@@ -18,3 +18,5 @@
 
 # print(scores)
 
+name = input('Enter name: ')
+print(name)

@@ -13,7 +13,8 @@
 </head>
 {% block content%}
 
-<body class="container" style="background-image: url(../../static/aib_site/images/fireySkyBackground.png); background-repeat: no-repeat;background-size: cover;">
+<body class="container"
+    style="background-image: url(../../static/aib_site/images/fireySkyBackground.png); background-repeat: no-repeat;background-size: cover;">
     <section class="page-section bg-light" id="portfolio">
         <div class="container p-4">
             <div class="text-center">
@@ -31,7 +32,8 @@
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i>👽</div>
                                 </div>
 
-                                <img id="bullet1" style="max-height:100px" class="img-fluid">
+                                <div id="bullet1" style="max-height:100px" class="img-fluid">
+                                </div>
 
                             </a>
 
@@ -73,6 +75,7 @@
                         nm = e.target.value;
 
                         bullet1.innerHTML = `<img style="max-height:100px" class="img-fluid" src="../../static/aib_site/images/bulletImageConverts/${nm}">`
+
                     })
 
 

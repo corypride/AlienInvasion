@@ -18,5 +18,19 @@
 
 # print(scores)
 
-name = input('Enter name: ')
-print(name)
+# name = input('Enter name: ')
+# print(name)
+
+
+supper = ["fish","chicken","fries"]
+
+for i,item in enumerate(supper):
+    print(f"{i+1}. {item}")
+
+
+temp = 10
+temp /= 2
+print( temp)
+import random
+
+print(random.choice(supper))

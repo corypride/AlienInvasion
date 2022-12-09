@@ -194,7 +194,6 @@ def playGame(request):
 
     # TODO: on the submit button of this form i need to put the saveScore() also I need to modify that method to check if the info is already saved before it saves it again
 
-    # also the option need to be on that page to repick settings
 
     if request.method == 'POST' and request.POST["willPlay"]:
         subprocess.run(commandLineString)

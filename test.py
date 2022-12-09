@@ -26,7 +26,14 @@
 
 #     file_object.write(myVar)
 
-c = {}
-c.update(test1=1)
-c.update(test2=2)
-print(c)
+# c = {}
+# c.update(test1=1)
+# c.update(test2=2)
+# print(c)
+
+
+import os
+
+
+
+# print(os.pardir)

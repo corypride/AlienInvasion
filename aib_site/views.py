@@ -148,7 +148,7 @@ def bullet_form(request):
 def saveScore(request):
     """Save score after a game"""
     dictObj = getScoreFromJSON()
-    print(dictObj)
+    
     if dictObj["highScore"] > 0:
         userId = int(dictObj["userId"])
 

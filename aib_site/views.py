@@ -213,5 +213,9 @@ def playGame(request):
     context.update(bulletName=settingList[5])
 
     return render(request,"aib_site/play.html",context)
+
+def displayPygameDefinitions(request):
+    """Displays pygame module definitions"""
+    return render(request, "aib_site/definitions.html")
         
 

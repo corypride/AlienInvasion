@@ -32,8 +32,8 @@ urlpatterns = [
     path('play/',views.playGame,name='play_game'),
     # play game with your previous settings
     path('play/continue',views.continueWithSameSettings,name='play_again'), 
-    # Display definitions page
-    path('defs',views.displayPygameDefinitions,name='pygame_defs'),   
+    # Display pygame_intro page
+    path('intro',views.displayPygameIntro,name='pygame_intro'),   
 
     # for the path() function - the first arg is a string that helps Django route the current request properly. Django receives the requested URL and tries to route the request to a view. It does this by searching all the URL patterens i've defined to find one that matches the current request. Django ignores the base URL for the project(http://localhost:8000/), so the empty string ('') matches the base URL. Any other URL won't match this pattern, and Django will return an error page if the URL requested does not match any existing URL patterns.
 

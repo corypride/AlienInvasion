@@ -1,0 +1,55 @@
+defs from alienInvasion.py
+____________________________________________________
+1. pygame.sprite.Group() - A container class to hold and manage multiple Sprite objects. This class can be inherited to create containers with more specific behaviors. The constructor takes any number of Sprite arguments to add to the Group. The group supports the following standard Python operations:
+
+* sprites() linkUrl = #pygame.sprite.Group.sprites
+* copy() linkUrl = #pygame.sprite.Group.copy
+* add() linkUrl = #pygame.sprite.Group.add
+* remove() linkUrl = #pygame.sprite.Group.remove
+* has() linkUrl = #pygame.sprite.Group.has
+* update() linkUrl = #pygame.sprite.Group.update
+* draw()  linkUrl = #pygame.sprite.Group.draw
+* clear() linkUrl = #pygame.sprite.Group.clear
+* empty() linkUrl = #pygame.sprite.Group.empty
+
+url - alien_invasionOOP/aib_site/static/aib_site/py_code/pygame/docs/generated/ref/sprite.html#pygame.sprite.Group.add
+
+
+
+2. pygame.transform.scale(self.bg_image, (self.settings.screen_width, self.settings.screen_height))
+
+3. blit(scaled_bg, (0, 0)) - the blit method draws the image to the screen and the specified location
+
+4. pygame.event.get()
+
+5 Explain this loop and conditionals:
+for event in pygame.event.get():
+            # print(event)
+            if event.type == pygame.QUIT: 
+                sys.exit()
+            elif event.type == pygame.KEYDOWN:
+               self._check_keydown_events(event)
+
+            
+6.  pygame.mouse.set_visible(False) - hides the mouse cursor
+
+7. self.aliens.empty()
+
+8. self.bullets.update()
+
+9. pygame.sprite.groupcollide(self.bullets, self.aliens,True,True)
+
+10. Explain this loop and statements
+ if collisions:
+            for aliens in collisions.values():
+                self.stats.score += (self.settings.aliens_points *
+                    len(aliens))
+                self.sb.prep_score()
+                self.sb.check_high_score()
+11. pygame.display.flip()
+
+12. pygame.sprite.spritecollideany(self.ship,self.aliens)
+
+13. sleep(0.5)
+
+____________________________________________________

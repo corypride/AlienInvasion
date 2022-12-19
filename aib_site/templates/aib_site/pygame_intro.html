@@ -4,19 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pygame Module Definitions  &#8212;</title>
+    <title>Pygame Module Definitions &#8212;</title>
     {%extends "aib_site/base.html"%}
     {% block styling_links %}
     <link type="text/css" rel="stylesheet" href="../../static/aib_site/css/index.css">
-    <link rel="shortcut icon" href="../../static/aib_site/images/pygame.ico"/>
+    <link type="text/css" rel="stylesheet" href="../../static/aib_site/css/pygame_intro.css">
+    <link rel="shortcut icon" href="../../static/aib_site/images/pygame.ico" />
     {% endblock styling_links %}
 </head>
-    {% block content %} 
-    <body class="container-fluid text-light" style="">
-        <img src="../../static/aib_site/images/pygame_tiny.png">
-        <!-- TODO: Write up some startup info and use the marquee to display it going up the page -->
-        
-<!--     
+{% block content %}
+
+<body class="container-fluid text-light">
+    <div class="jumbotron jumbotron-fluid bg-dark text-center p-1" style="border-radius: 36%;">
+        <img class="img-fluid" src="../../static/aib_site/images/pygame_tiny2.png" style="transform: scale(1,1);">
+    </div>
+
+    {% load static %}
+
+
+    <h1>
+        <Marquee style="background: #1e1e1e; color:#6a9955">This site was created by Cory 'CP' Pride in 2022. Many of
+            the notes used pertaining to the pygame module have been
+            parphrased from the pygame documentation and the Python Crash Course
+            book by Eric Matthes. The directions are also written assuming that
+            the user has at least a basic understanding of python.</Marquee>
+    </h1>
+    <table class="table table-stripped table-bordered text-primary">
+        <h1 class="text-dark text-center">Pygame Intro</h1>
+        <h2 class="text-dark">Part 1: Getting Started with the pygame module</h2>
+        <tr>
+        <tr>
+            <th>
+                importing sys and pygame
+            </th>
+
+            <td>importing these module gives you access to all the methods and properties of the modules.
+            </td>
+            <td>
+                <a>See Code Snippet</a>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <!-- TODO: figure out how to render this url with the #sign it it -->
+                <!-- <a href="{% static '{{test}}' %}">pygame.init() </a> -->
+            </th>
+            <td>
+                Initializing the pygame module. 
+            </td>
+        </tr>
+    </table>
+
+
+    <div id="codeWindow1" style="height: 110px;" class="border border-primary p-3 codeWindow ">
+        <p>
+            <span class="lineNumbers" >1</span>
+            <span class="imports">import</span>
+            sys
+        </p>
+        <p>
+            <span class="lineNumbers" >2</span>
+            <span class="imports">import</span>
+            pygame
+        </p>
+
+    </div>
+
+    <table class="table table-stripped table-bordered text-primary">
+        <h2 class="text-dark">Part 2: Getting Started with pygame.Display</h2>
+        <tr>
+            <th> <a>pygame.display</a></th>
+            <td>
+                display is a pygame module that lets you control the window and screen.
+            </td>
+        </tr>
+    </table>
+
+
+
+    <a href="{% static 'aib_site/py_code/pygame/docs/generated/index.html' %}">See Complete Pygame documentation</a>
+
+    <!-- TODO: Write up some startup info and use the marquee to display it going up the page -->
+
+    <!--     
     <div class="row">
         <div class="col-sm-12 col-lg-6"> 
             <img  class="img-thumbnail" src="../../static/aib_site/images/alienInvasion1.png">
@@ -81,9 +151,9 @@
     <h1>
         TODO: make a template for the choose forms
     </h1> -->
-    </body>
+</body>
 
-    {% endblock content %}
+{% endblock content %}
 
 
 </html>

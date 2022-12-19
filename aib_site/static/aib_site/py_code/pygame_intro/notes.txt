@@ -1,0 +1,17 @@
+Show the user how to create a display window and screen
+setDisplay size
+set Display caption
+set background to display
+
+Show the user how to place 2 objects on the screen 
+
+Show the user how to move objects on screen
+events
+key_down
+
+Show the user how to tell if the objects collide
+
+Show the user how to write a score on the screen
+
+Show the user how to quit using key_down
+

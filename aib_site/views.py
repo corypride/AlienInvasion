@@ -2,6 +2,7 @@ import json
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django import forms
+import django.utils.html as test
 
 # for converting the json objects and running the pygame in the terminal
 from .static.aib_site.py_code.alien_invasion.communication import getGameSettingsFromJson
@@ -214,8 +215,12 @@ def playGame(request):
 
     return render(request,"aib_site/play.html",context)
 
-def displayPygameDefinitions(request):
+def displayPygameIntro(request):
     """Displays pygame module definitions"""
-    return render(request, "aib_site/definitions.html")
+    
+    mystr = test.format_html(test.mark_safe('static aib_site/py_code/pygame/docs/generated/ref/pygame.html?highlight=pygame init#pygame.init'))  
+   
+    context = {"intro":True,"test":mystr}
+    return render(request, "aib_site/pygame_intro.html",context)
         
 

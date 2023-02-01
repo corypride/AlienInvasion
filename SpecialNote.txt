@@ -1,0 +1,7 @@
+When a user clones this project on their computer other that a version
+of python3.6 or better they must install the following modules for the
+current user:
+
+
+django = pip install django
+pygame = python3 -m pip install --user pygame

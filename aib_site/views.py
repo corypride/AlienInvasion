@@ -194,7 +194,6 @@ def playGame(request):
     commandLineString = getGameSettingsFromJson()
 
     # TODO: on the submit button of this form i need to put the saveScore() also I need to modify that method to check if the info is already saved before it saves it again
-    print('The request type is ......'+ request.method)
 
     if request.method == 'POST' and request.POST["willPlay"]:
         subprocess.run(commandLineString)

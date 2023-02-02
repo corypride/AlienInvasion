@@ -1,0 +1,17 @@
+.codeWindow{
+    font-size: 30pt;
+    background-color: #1e1e1e;;
+    margin-bottom: 0in;
+    line-height: 0.32in;
+    width:500px;
+    height: 500px;
+}
+
+.lineNumbers{
+   color:rgba(255, 255, 255, 0.3); 
+    margin-right: 0.2cm;
+}
+
+.imports{
+    color:#c586c0;
+}

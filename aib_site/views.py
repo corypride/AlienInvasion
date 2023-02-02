@@ -2,6 +2,7 @@ import json
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django import forms
+import django.utils.html as test
 
 # for converting the json objects and running the pygame in the terminal
 from .static.aib_site.py_code.alien_invasion.communication import getGameSettingsFromJson
@@ -194,7 +195,6 @@ def playGame(request):
 
     # TODO: on the submit button of this form i need to put the saveScore() also I need to modify that method to check if the info is already saved before it saves it again
 
-
     if request.method == 'POST' and request.POST["willPlay"]:
         subprocess.run(commandLineString)
         return redirect("aib_site:save_score")
@@ -213,5 +213,13 @@ def playGame(request):
     context.update(bulletName=settingList[5])
 
     return render(request,"aib_site/play.html",context)
+
+def displayPygameIntro(request):
+    """Displays pygame module definitions"""
+    
+    mystr = test.format_html(test.mark_safe('static aib_site/py_code/pygame/docs/generated/ref/pygame.html?highlight=pygame init#pygame.init'))  
+   
+    context = {"intro":True,"test":mystr}
+    return render(request, "aib_site/pygame_intro.html",context)
         
 

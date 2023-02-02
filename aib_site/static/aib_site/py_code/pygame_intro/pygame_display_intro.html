@@ -1,0 +1,402 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title></title>
+
+	<style type="text/css">
+		/* @page {
+			size: 8.5in 5in;
+			margin: 0.79in
+		} */
+
+		/* p {
+			margin-bottom: 0.1in;
+			line-height: 115%;
+			background: transparent
+		} */
+
+		/* a:link {
+			color: #000080;
+			so-language: zxx;
+			text-decoration: underline
+		} */
+
+		/* a:visited {
+			color: #800000;
+			so-language: zxx;
+			text-decoration: underline
+		} */
+	</style>
+</head>
+
+<body lang="en-US" link="#000080" vlink="#800000" bgcolor="#000000" dir="ltr">
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#6a9955">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e">#
+						This site was created by Cory 'CP' Pride in 2022</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#6a9955">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e">#
+						Many of the notes used pertaining to the pygame module have been
+						parphrased from the pygame documentation and the Python Crash Course
+						book by Eric Matthes. The directions are also written assuming that
+						the user has at least a basic understanding of python.</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; line-height: 0.2in"><br />
+
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#d4d4d4">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e">
+						<font color="#c586c0">import</font>
+						sys
+					</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#d4d4d4">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e">
+						<font color="#c586c0">import</font>
+						pygame
+					</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; line-height: 0.2in"><br />
+
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#d4d4d4">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e">
+						<font color="#569cd6">class</font>
+						<font color="#4ec9b0">pygameWindowIntro</font>:
+					</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#ce9178">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e">&quot;&quot;&quot;Overall
+						class to show users how to...&quot;&quot;&quot;</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#d4d4d4">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e">
+						<font color="#569cd6"> def</font>
+						<font color="#dcdcaa">__init__</font>(<font color="#9cdcfe">self</font>):
+					</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#ce9178">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e"> &quot;&quot;&quot;Initialize
+						game and create some game stuff&quot;&quot;&quot;</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#6a9955">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e"> #
+						First you must initialize the pygame module</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#d4d4d4">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e"> pygame.init()
+						<font color="#6a9955">#see /pygame.html#pygame.init for more info</font>
+					</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; line-height: 0.2in"><br />
+
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#6a9955">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e"> #
+						use set_mode to create a display window which will be used as our
+						canvas to draw all the game stuff on</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; line-height: 0.2in"><br />
+
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#6a9955">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e"> #
+						we choose the width and height that we want and use these values to
+						pass as the size argument to the set_mode() function</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#d4d4d4">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e">
+						<font color="#569cd6"> self</font>.screenWidth
+						= <font color="#b5cea8">1200</font>
+					</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#d4d4d4">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e">
+						<font color="#569cd6"> self</font>.screenHeight
+						= <font color="#b5cea8">800</font>
+					</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; line-height: 0.2in"><br />
+
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#6a9955">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e"> #
+						set_mode takes several arguments but the first and most relevant to
+						our introduction to the pygame module is the size parameter which
+						takes a tuple(int, int) which defines the width and height of the
+						game window </span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#d4d4d4">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e">
+						<font color="#569cd6"> self</font>.screen
+						= pygame.display.set_mode(<font color="#9cdcfe">size</font>=(<font color="#569cd6">self</font>
+						.screenWidth,<font color="#569cd6">self</font>.screenHeight))
+					</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#d4d4d4">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e">
+						<font color="#6a9955"> #see
+							/display.html#pygame.display.set_mode for more info</font>
+					</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; line-height: 0.2in"><br />
+
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#6a9955">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e"> #
+						set the caption that will go on the top of the window you created</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#d4d4d4">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e"> pygame.display.set_caption(
+						<font color="#ce9178">&quot;My
+							Game Name goes Here&quot;</font>) </span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#d4d4d4">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e">
+						<font color="#6a9955"> #see
+							/display.html#pygame.display.set_caption for more info</font>
+					</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0.2in; line-height: 0.2in"><br />
+		<br />
+
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#d4d4d4">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e">
+						<font color="#569cd6"> def</font>
+						<font color="#dcdcaa">run_game</font>(<font color="#9cdcfe">self</font>):
+					</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#ce9178">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e"> &quot;&quot;&quot;Start
+						the main loop for your game&quot;&quot;&quot;</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#d4d4d4">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e">
+						<font color="#c586c0"> while</font>
+						<font color="#569cd6">True</font>:
+					</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; line-height: 0.2in"><br />
+
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#6a9955">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e"> #
+						pygame.event is a module for interacting with events.Pygame
+						handles all its event messaging through an event queue. To access
+						the queued events we use the method pygame.event.get(). The get()
+						method gets and removes all of the messages from the queue and
+						returns them as a list </span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; line-height: 0.2in"><br />
+
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#6a9955">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e"> #
+						You need to constantly look for keyboard and mouse events in order
+						to control and manipulate the things that go on in your game. That
+						includes things like moving your objects or as you see below,
+						looking for an event which allows a user to quit the game</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#d4d4d4">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e">
+						<font color="#c586c0"> for</font>
+						event <font color="#c586c0">in</font> pygame.event.get():
+					</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#d4d4d4">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e">
+						<font color="#c586c0"> if</font>
+						event.type == pygame.QUIT:
+					</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#d4d4d4">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e"> sys.exit()
+						<font color="#6a9955"># Exits the python interpreter</font>
+					</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; line-height: 0.2in"><br />
+
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#6a9955">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e"> #
+						Makes the most recently drawn screen visisble</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#d4d4d4">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e"> pygame.display.flip()
+					</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#d4d4d4">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e">
+						<font color="#6a9955"> #
+							see display.html#pygame.display.flip for more info</font>
+					</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; line-height: 0.2in"><br />
+
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#d4d4d4">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e">
+						<font color="#c586c0">if</font>
+						<font color="#9cdcfe">__name__</font> == <font color="#ce9178">'__main__'</font>:
+					</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#6a9955">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e">#
+						Make an instance of the game and then run it</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#d4d4d4">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e">ai
+						= pygameWindowIntro()</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 0.2in">
+		<font color="#d4d4d4">
+			<font face="Droid Sans Mono, monospace, monospace, Droid Sans Fallback">
+				<font size="2" style="font-size: 10pt"><span style="background: #1e1e1e">ai.run_game()</span></font>
+			</font>
+		</font>
+	</p>
+	<p style="margin-bottom: 0in; line-height: 100%"><br />
+
+	</p>
+</body>
+
+</html>

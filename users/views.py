@@ -10,6 +10,7 @@ def register(request):
         form = UserCreationForm()
     else:
         # Process completed form
+        
         form = UserCreationForm(data=request.POST)
 
         if form.is_valid():

@@ -22,6 +22,8 @@ from .score import getScoreFromJSON
 # Create your views here.
 
 def index(request):
+    theStr = str(request.user.id)+" " +str(request.user.username)
+    print(theStr)    
     """The home page for Alien Invasion Build."""
     return render(request,'aib_site/index.html')
 
